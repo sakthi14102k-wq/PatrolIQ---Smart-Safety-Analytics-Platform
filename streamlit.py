@@ -517,18 +517,6 @@ elif page == "MLflow Model Tracking":
 
                 st.json(metrics)
 
-                # -----------------------------
-                # 📊 HISTORY TABLE
-                # -----------------------------
-                st.markdown("### 📜 Recent Runs")
-
-                cols = [
-                    c for c in runs.columns
-                    if "metrics." in c or "params." in c or c == "start_time"
-                ]
-
-                st.dataframe(runs[cols].head(10))
-
     except Exception as e:
         st.error(f"MLflow connection error: {str(e)}")
 
